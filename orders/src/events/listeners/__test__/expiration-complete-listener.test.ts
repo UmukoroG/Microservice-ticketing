@@ -3,7 +3,7 @@ import { natsWrapper } from "../../../nats-wrapper";
 import { Order } from "../../../models/orders";
 import { Ticket } from "../../../models/ticket";
 import mongoose from "mongoose";
-import { orderStatus, expirationCompleteEvent } from "@umukorog-tickets/common";
+import { orderStatus, ExpirationCompleteEvent } from "@umukorog-tickets/common";
 import { Message } from "node-nats-streaming";
 
 const setup = async () => {
@@ -24,7 +24,7 @@ const setup = async () => {
     });
     await order.save();
 
-    const data: expirationCompleteEvent['data'] = {
+    const data: ExpirationCompleteEvent['data'] = {
         orderId: order.id
     };
 
