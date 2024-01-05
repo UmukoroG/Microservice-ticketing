@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tickets-depl
+spec:
+  replicas: 1
+  selector: #how to find a pod
+    matchLabels:
+      app: tickets
+  template: #how to create a pod
+    metadata:
+      labels:
+        app: tickets
+    spec: #tells the pods how to behave
+      containers:
+        - name: tickets
+          image: umukorog2/tickets
+          env: #tell the container about the environment variables
+            - name: NATS_URL
+              value: 'http://nats-srv:4222' #name of the service and port
+            - name: NATS_CLUSTER_ID
+              value: 'ticketing' #name of the cluster id
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name #get the value from the pod name
+            - name: MONGO_URI
+              value: 'mongodb://tickets-mongo-srv:27017/tickets' 
+            - name: JWT_KEY #environment variable name
+              valueFrom:
+                secretKeyRef: #get the value from a secret we just created in kubernetes  
+                  name: jwt-secret
+                  key: JWT_KEY #key name for the value of the secret - asdf
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tickets-srv
+spec: 
+  selector:
+    app: tickets
+  ports:
+    - name: tickets
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

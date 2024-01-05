@@ -1,0 +1,58 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy: 
+  kubectl: 
+    manifests: #tell skaffold to watch for changes in the following files
+      - ./infra/k8s/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: umukorog2/auth
+      context: auth #this is the folder where the Dockerfile is located
+      docker:
+        dockerfile: Dockerfile
+      sync: #tell skaffold to watch for changes in the following files
+        manual:
+          - src: 'src/**/*.ts'
+            dest: . #this means, we sync this file to the root of the container 
+    - image: umukorog2/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .
+    - image: umukorog2/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: umukorog2/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: umukorog2/payments
+      context: payments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: umukorog2/expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .

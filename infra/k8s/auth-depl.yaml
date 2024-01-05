@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-depl
+spec:
+  replicas: 1
+  selector: #how to find a pod
+    matchLabels:
+      app: auth
+  template: #how to create a pod
+    metadata:
+      labels:
+        app: auth
+    spec: #tells the pods how to behave
+      containers:
+        - name: auth
+          image: umukorog2/auth
+          env: #tell the container about the environment variables
+            - name: MONGO_URI
+              value: 'mongodb://auth-mongo-srv:27017/auth'
+            - name: JWT_KEY #environment variable name
+              valueFrom:
+                secretKeyRef: #get the value from a secret we just created in kubernetes  
+                  name: jwt-secret
+                  key: JWT_KEY #key name for the value of the secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-srv
+spec: 
+  selector:
+    app: auth
+  ports:
+    - name: auth
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

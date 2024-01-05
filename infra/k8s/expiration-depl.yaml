@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expiration-depl
+spec:
+  replicas: 1
+  selector: #how to find a pod
+    matchLabels:
+      app: expiration
+  template: #how to create a pod
+    metadata:
+      labels:
+        app: expiration
+    spec: #tells the pods how to behave
+      containers:
+        - name: expiration
+          image: umukorog2/expiration
+          env: #tell the container about the environment variables
+            - name: NATS_URL
+              value: 'http://nats-srv:4222' #name of the service and port
+            - name: NATS_CLUSTER_ID
+              value: 'ticketing' #name of the cluster id
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name #get the value from the pod name
+            - name: REDIS_HOST
+              value: 'expiration-redis-srv' #name of the service and port
