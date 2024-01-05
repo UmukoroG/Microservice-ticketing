@@ -11,7 +11,7 @@ let mongo: any;
 beforeAll(async () => {
     process.env.JWT_KEY='asdf';
 
-    mongo = await MongoMemoryServer.create();;
+    mongo = await MongoMemoryServer.create();
     const mongoUri = mongo.getUri();//this is the uri to connect to the in memory mongo db
     await mongoose.connect(mongoUri,{});
     //this is to connect to the in memory mongo db
