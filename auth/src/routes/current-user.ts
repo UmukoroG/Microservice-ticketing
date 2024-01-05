@@ -7,15 +7,15 @@ router.get("/api/users/currentuser",
     // currentUser, 
     (req: Request, res: Response) => {
     // res.send({currentUser: req.currentUser || null}); //attached to the currentuser middleware
-    res.send({currentUser: req.session?.jwt || null});
+    // res.send({currentUser: req.session?.jwt || null});
     
     
-    // if(req.session?.jwt) {
-    //     res.send({currentUser: req.session.jwt});
-    // }
-    // else {
-    //     res.send({currentUser: null});
-    // }   
+    if(req.session?.jwt) {
+        res.send({currentUser: req.session.jwt});
+    }
+    else {
+        res.send({currentUser: null});
+    }   
 });
 
 export { router as currentUserRouter };
