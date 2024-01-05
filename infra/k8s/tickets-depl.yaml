@@ -30,7 +30,7 @@ spec:
               valueFrom:
                 secretKeyRef: #get the value from a secret we just created in kubernetes  
                   name: jwt-secret
-                  key: JWT_KEY #key name for the value of the secret - asdf
+                  key: JWT_KEY #key name for the value of the secret 
 ---
 apiVersion: v1
 kind: Service
