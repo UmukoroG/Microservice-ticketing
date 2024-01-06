@@ -16,7 +16,8 @@ app.set("trust proxy", true);
 //secure even though it is coming from that proxy
 app.use(cookieSession({
   signed:false,
-  secure: process.env.NODE_ENV !=='test' //returns false if we are in a test environment
+  secure:false,
+  // secure: process.env.NODE_ENV !=='test' //returns false if we are in a test environment
 //   secure: true // true: cookies can only be used if the user is visiting our app over https connection and not over http connection like testing environment       
 
 }))
