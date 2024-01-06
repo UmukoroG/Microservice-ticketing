@@ -1,0 +1,29 @@
+#run this deployment workflow if there is a change in the expiration directory upon a commit
+name: deploy-expiration 
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'expiration/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd expiration && docker build -t umukorog2/expiration .
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      - run: docker tag umukorog2/expiration umukorog2/dockerhub
+      - run: docker push umukorog2/dockerhub      
+      - uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - run: doctl kubernetes cluster kubeconfig save a1f7173e-1877-47d5-9d16-80380cc322f5
+      - run: kubectl rollout restart deployment expiration-depl #restart the deployment
+      
+    
