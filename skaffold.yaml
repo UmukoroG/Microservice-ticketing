@@ -4,6 +4,7 @@ deploy:
   kubectl: 
     manifests: #tell skaffold to watch for changes in the following files
       - ./infra/k8s/*
+      - ./infra/k8s-dev/*
 build:
   local:
     push: false
