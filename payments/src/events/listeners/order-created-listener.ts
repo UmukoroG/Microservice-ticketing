@@ -1,4 +1,4 @@
-import { Listener, orderCreatedEvent, Subjects }from "@umukorog-tickets/common";
+import { Listener, orderCreatedEvent, Subjects }  from "@umukorog-tickets/common";
 import { queueGroupName } from "./queue-group-name";
 import { Message } from "node-nats-streaming";
 import { Order } from "../../model/order";

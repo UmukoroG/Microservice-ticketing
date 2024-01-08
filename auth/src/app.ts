@@ -6,7 +6,7 @@ import { currentUserRouter } from "./routes/current-user";
 import { signupRouter } from "./routes/signup";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
-import { errorHandler, NotFoundError }from "@umukorog-tickets/common";
+import { errorHandler, NotFoundError }  from "@umukorog-tickets/common";
 
 const app = express();
 app.use(json());
