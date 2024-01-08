@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { orderStatus } from "@umukorog-tickets/common";
+import { orderStatus }from "@umukorog-tickets/common";
 import { TicketDoc } from "./ticket";
 import { updateIfCurrentPlugin } from "mongoose-update-if-current";
 

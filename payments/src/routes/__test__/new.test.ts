@@ -2,7 +2,7 @@ import request from "supertest";
 import { app } from "../../app";
 import mongoose from "mongoose";
 import { Order } from "../../model/order";
-import { orderStatus } from "@umukorog-tickets/common";
+import { orderStatus }from "@umukorog-tickets/common";
 // import { stripe } from '../../stripe';
 import { stripe } from '../../stripe';
 import { Payment } from "../../model/payment";

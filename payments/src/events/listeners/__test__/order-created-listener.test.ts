@@ -1,6 +1,6 @@
 import { natsWrapper } from "../../../nats-wrapper";
 import { orderCreatedListener } from "../order-created-listener";
-import { orderCreatedEvent,orderStatus } from "@umukorog-tickets/common";
+import { orderCreatedEvent,orderStatus }from "@umukorog-tickets/common";
 import { Order } from "../../../model/order";
 
 

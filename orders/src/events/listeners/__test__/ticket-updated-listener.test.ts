@@ -1,5 +1,5 @@
 import { TicketUpdatedListener } from "../ticket-updated-listener";
-import { TicketUpdatedEvent } from "@umukorog-tickets/common";
+import { TicketUpdatedEvent }from "@umukorog-tickets/common";
 import { Message } from "node-nats-streaming";
 import { natsWrapper } from "../../../nats-wrapper";
 import mongoose from 'mongoose';

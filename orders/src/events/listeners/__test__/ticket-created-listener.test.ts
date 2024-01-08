@@ -1,5 +1,5 @@
 import { TicketCreatedListener } from "../ticket-created-listener";
-import { TicketCreatedEvent } from "@umukorog-tickets/common";
+import { TicketCreatedEvent }from "@umukorog-tickets/common";
 import { natsWrapper } from "../../../nats-wrapper";
 import mongoose from 'mongoose';
 import { Ticket } from "../../../models/ticket";
