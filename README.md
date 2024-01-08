@@ -10,6 +10,10 @@ In a microservices architecture, communication between services is a critical as
 
 `Diagrams and more to be added soon`
 
+## Continous Integration (CI) / Continous Deployment (CD) Pipeline ##
+---
+`More details coming soon`
+
 ## Getting Started ##
 ---
 ### Prerequisites ###
