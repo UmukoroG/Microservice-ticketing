@@ -18,8 +18,8 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker tag umukorog2/auth umukorog2/dockerhub
-      - run: docker push umukorog2/dockerhub      
+      - run: docker tag umukorog2/auth umukorog2/auth
+      - run: docker push umukorog2/auth      
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
