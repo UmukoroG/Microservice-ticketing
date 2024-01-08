@@ -25,7 +25,7 @@ Make sure you have the following tools installed in your machine:
 ---
 Clone the repository:
 ```
-git clone https://github.com/your-username/microservice-ticketing-app.git
+git clone https://github.com/umukoroG/microservice-ticketing-app.git
 cd microservice-ticketing-app
 ```
 Build the docker images for each microservice:
