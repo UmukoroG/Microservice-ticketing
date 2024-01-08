@@ -53,7 +53,7 @@ The `orders` service manages the creation and tracking of orders.
 
 ## Payments Service ##
 ---
-The `payments` service is responsible for processing payment transactions.
+The `payments` service is responsible for processing payment transactions which is done using Stripe.
 
 ## Tickets Service ##
 ---
@@ -61,7 +61,7 @@ The `tickets` service handles the creation and management of tickets.
 
 ## Expiration Service ##
 ---
-The `expiration` service deals with the automatic expiration of certain resources.
+The `expiration` service deals with the automatic expiration of Tickets. It hold a ticket for a certain amount of time while a user is in the process of purchasing the ticket. If the ticket is not purchased, once the time expires, ticket is available to all user for purchasing.
 
 ## Kubernetes Deployment ##
 ---
