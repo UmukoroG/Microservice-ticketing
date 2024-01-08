@@ -2,6 +2,8 @@
 ---
 Welcome to the Microservice Ticketing App! This project is designed to provide a scalable and modular solution for managing ticketing operations. The application consists of five microservices: `auth`, `orders`, `payments`, `tickets`, and `expiration`. Each microservice is encapsulated in a Docker container and orchestrated using Kubernetes. Skaffold is employed to streamline the Kubernetes deployment process, and the entire project is hosted on Digital Ocean.
 
+App is still in progress and can be accessed here : http://www.microservice-ticketing-sale-app.shop/
+
 ## Communications ##
 ---
 In a microservices architecture, communication between services is a critical aspect. One approach to achieve this communication is by using a message broker. In the Microservice Ticketing App, Node.js NATS Streaming Server which is built on top of NATS (Pub/Sub messaging system) is used to communicate between the services. 
