@@ -1,7 +1,7 @@
 import express from "express";
 import { body } from "express-validator";//validates incoming data from the body of the post request    
 import { Request, Response } from "express";
-import { BadRequestError, validateRequest}from "@umukorog-tickets/common";
+import { BadRequestError, validateRequest}  from "@umukorog-tickets/common";
 import { User } from "../models/user";
 import { Password } from "../services/password";
 import jwt from "jsonwebtoken"; 

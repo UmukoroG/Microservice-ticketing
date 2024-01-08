@@ -1,8 +1,8 @@
-// import { Subjects, Listener, PaymentCreatedEvent }from "@umukorog-tickets/common";
+// import { Subjects, Listener, PaymentCreatedEvent }  from "@umukorog-tickets/common";
 // import {queueGroupName } from "./queue-group-name";
 // import { Order } from "../../model/order";
 // import { Message } from "node-nats-streaming";
-// import { orderStatus }from "@umukorog-tickets/common";
+// import { orderStatus }  from "@umukorog-tickets/common";
 
 // export class PaymentCreatedListener extends Listener<PaymentCreatedEvent>{
 //     subject: Subjects.PaymentCreated = Subjects.PaymentCreated;

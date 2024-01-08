@@ -1,8 +1,8 @@
-import { orderCancelledEvent, Subjects, Listener }from "@umukorog-tickets/common";
+import { orderCancelledEvent, Subjects, Listener }  from "@umukorog-tickets/common";
 import { queueGroupName } from "./queue-group-name";
 import { Message } from "node-nats-streaming";
 import { Order } from "../../model/order";
-import { orderStatus }from "@umukorog-tickets/common";
+import { orderStatus }  from "@umukorog-tickets/common";
 
 
 export class orderCancelledListener extends Listener<orderCancelledEvent> {

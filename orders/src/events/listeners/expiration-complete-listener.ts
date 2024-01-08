@@ -1,10 +1,10 @@
 import { queueGroupName } from "./queue-group-name";
 import { Message } from "node-nats-streaming";
 import { Order } from "../../models/orders";
-import { orderStatus }from "@umukorog-tickets/common";
+import { orderStatus }  from "@umukorog-tickets/common";
 import { OrderCancelledPublisher } from "../publishers/order-cancelled-publisher";
 import { natsWrapper } from "../../nats-wrapper";
-import { Listener, Subjects, ExpirationCompleteEvent }from "@umukorog-tickets/common";
+import { Listener, Subjects, ExpirationCompleteEvent }  from "@umukorog-tickets/common";
 
 export class expirationCompleteListener extends Listener<ExpirationCompleteEvent>{
     readonly subject = Subjects.ExpirationComplete;
