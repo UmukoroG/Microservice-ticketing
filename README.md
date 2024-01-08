@@ -32,7 +32,7 @@ Build the docker images for each microservice:
 ```
 cd auth
 docker build -t umukorog2/auth .
-# auth service can be changed here but must be updated in the kubernetes depl files
+# auth service name(umukorog2/auth) can be changed here but must be updated in the kubernetes depl files
 # Repeat for other services
 ```
 Set up Kubernetes cluster on Digital Ocean and configure kubectl:
