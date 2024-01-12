@@ -20,13 +20,13 @@ export default ({ currentUser }) => {
     });
 
   return (
-    <nav className="navbar navbar-light bg-light">
-      <Link className="navbar-brand" href="/">
+    <nav className="navbar navbar-light bg-slate-300">
+      <Link className="navbar-brand ml-8" href="/">
         TicketSwift
       </Link>
 
-      <div className="d-flex justify-content-end">
-        <ul className="nav d-flex align-items-center">{links}</ul>
+      <div className="d-flex justify-content-end mr-8">
+        <ul className="nav d-flex content-center font-sans">{links}</ul>
       </div>
     </nav>
   );

@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import buildClient from '../api/build-client';
+import Footer from '../components/footer';
 import Header from '../components/header';
+import '../styles/globals.css';
 
 const AppComponent = ({ Component, pageProps, currentUser }) => {
   return (
@@ -9,6 +11,7 @@ const AppComponent = ({ Component, pageProps, currentUser }) => {
       <div className="container">
         <Component currentUser={currentUser} {...pageProps} />
       </div>
+      <Footer />
     </div>
   );
 };
