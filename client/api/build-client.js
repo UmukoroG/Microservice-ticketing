@@ -10,7 +10,7 @@ export default ({ req }) => {
     //   },
     // );
 
-    // We are on the cloud server
+    // We are on the  cloud server
     return axios.create({
       baseURL: 'http://www.microservice-ticketing-sale-app.shop',
       headers: req.headers,
