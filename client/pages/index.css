@@ -1,0 +1,57 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Add custom styles for sidebar */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  background-color: #504242;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: -280px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+.sidebar ul {
+  padding: 20px;
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  font-family: monospace;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  /* text-decoration: underline; */
+  text-decoration-color: peachpuff;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  margin-left:10px;
+  z-index: 1001;
+}

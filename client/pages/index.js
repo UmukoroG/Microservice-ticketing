@@ -18,7 +18,7 @@ const LandingPage = ({ currentUser, tickets }) => {
 
   const noTickets = (
     <tr>
-      <td colSpan="3">No tickets available</td>
+      <td className='font-bold' colSpan="3">No tickets available</td>
     </tr>
   );
 
