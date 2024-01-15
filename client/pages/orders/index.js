@@ -1,14 +1,23 @@
+import EmptyOrderCard from "../../components/empty-order-card";
+
 const OrderIndex = ({ orders }) => {
+
   return (
-    <ul>
-      {orders.map((order) => {
-        return (
-          <li key={order.id}>
-              {order.ticket.title} - {order.status}
-          </li>
-        );
-      })}
+    <div className="my-4 text-center bg-slate-400 content-center  rounded-lg max-w-sm">
+      <ul>
+        {
+          orders.length === 0 ? <EmptyOrderCard /> : 
+          orders.map(order => {
+            return (
+              <li key={order.id}>
+                {order.ticket.title} - {order.status}
+              </li>
+            )
+          })
+        }
     </ul>
+
+    </div>
   );
 };
 

@@ -13,11 +13,10 @@ const TicketShow = ({ ticket }) => {
   });
 
   return (
-    <div>
-      <h1>{ticket.title}</h1>
-      <h4>Price: {ticket.price}</h4>
+    <div className="my-40 text-center bg-white content-center mx-auto rounded-lg max-w-sm">
+      <h1 className='my-2'>{ticket.title} - ${ticket.price}</h1>
       {errors}
-      <button onClick={() => doRequest()} className="btn btn-primary">
+      <button onClick={() => doRequest()} className="btn my-3 bg-blue-400 rounded-lg hover:bg-blue-300 focus:outline-none focus:ring focus:ring-blue-300">
         Purchase
       </button>
     </div>
