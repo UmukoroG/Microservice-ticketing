@@ -27,7 +27,7 @@ const LandingPage = ({ currentUser, tickets }) => {
       <h1 className='text-center text-2xl my-8 font-bold font-serif'>Available Tickets</h1>
       <div className='relative overflow-x-auto'>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+          <thead className='text-xs text-gray-700 uppercase bg-slate-600 dark:bg-gray-700 dark:text-gray-400'>
             <tr className='text-slate-50'>
               <th className='px-6 py-3 text-center'>Title</th>
               <th className='px-6 py-3 text-center'>Price</th>
