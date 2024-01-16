@@ -1,7 +1,7 @@
 export default () => {
   return (
 
-<footer className="w-full fixed bottom-0 bg-slate-900">
+<footer className="w-full fixed bottom-0 bg-slate-500">
     <div className="container pt-9">
       <div className="mb-9 flex justify-center">
         <a className="mr-9 text-neutral-800 dark:text-neutral-200" href="https://www.linkedin.com/in/godbless-umukoro-15ba4a153/">
