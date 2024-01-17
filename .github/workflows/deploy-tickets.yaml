@@ -1,29 +1,29 @@
-#run this deployment workflow if there is a change in the auth directory upon a commit
-name: deploy-auth 
+#run this deployment workflow if there is a change in the tickets directory upon a commit
+name: deploy-tickets 
 
 on:
   push:
     branches:
       - master
     paths:
-      - 'auth/**'
+      - 'tickets/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd auth && docker build -t umukorog2/auth .
-      - run: docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+      - run: cd tickets && docker build -t umukorog2/tickets .
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker tag umukorog2/auth umukorog2/auth
-      - run: docker push umukorog2/auth      
+      - run: docker tag umukorog2/tickets umukorog2/tickets
+      - run: docker push umukorog2/tickets      
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - run: doctl kubernetes cluster kubeconfig save b7dcbe45-0cbe-48f9-b952-beca0c26105e
-      - run: kubectl rollout restart deployment auth-depl #restart the deployment
+      - run: kubectl rollout restart deployment tickets-depl #restart the deployment
       
     
