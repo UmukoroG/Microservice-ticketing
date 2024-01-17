@@ -10,7 +10,7 @@ build:
     push: false
   artifacts:
     - image: umukorog2/auth
-      context: auth #this is the folder where the Dockerfile is located
+      context: auth #this is the folder where the Dockerfile is located.
       docker:
         dockerfile: Dockerfile
       sync: #tell skaffold to watch for changes in the following files

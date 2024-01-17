@@ -39,7 +39,7 @@ spec:
                 name: orders-srv
                 port:
                   number: 3000
-          - path: /?(.*) #must be last as it is a catch all route
+          - path: /?(.*) #must be the last route as it is a catch all route
             pathType: ImplementationSpecific
             backend:
               service:
