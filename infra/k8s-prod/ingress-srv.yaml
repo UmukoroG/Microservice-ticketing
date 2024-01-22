@@ -52,6 +52,7 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
+    kubernetes.digitalocean.com/load-balancer-id: f55b4d90-a133b90813aea44a58e8c87df66bdf3d-4b1a29c40ff
     service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: 'true'
     service.beta.kubernetes.io/do-loadbalancer-hostname: 'www.microservice-ticketing-sale-app.shop'
     service.beta.kubernetes.io/do-loadbalancer-healthcheck-port: "80"
@@ -86,3 +87,16 @@ spec:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/component: controller
+---
+##new config to use proxy protocol
+apiVersion: v1
+data:
+   allow-snippet-annotations: "true"
+   use-proxy-protocol: "true"
+kind: ConfigMap
+metadata:
+annotations:
+    ....
+labels:
+    ...
+name: ingress-nginx-controller 
