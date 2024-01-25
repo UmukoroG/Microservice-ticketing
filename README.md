@@ -8,7 +8,9 @@ App is still in progress and can be accessed here : http://www.microservice-tick
 ---
 In a microservices architecture, communication between services is a critical aspect. One approach to achieve this communication is by using a message broker. In the Microservice Ticketing App, Node.js NATS Streaming Server which is built on top of NATS (Pub/Sub messaging system) is used to communicate between the services. 
 
-`Diagrams and more to be added soon`
+![dataflowTicketing](https://github.com/UmukoroG/Microservice-ticketing/assets/61124647/d2029334-8244-4203-b22f-f8d7d366a891)
+
+`More Diagrams to be added soon`
 
 ## Continous Integration (CI) / Continous Deployment (CD) Pipeline ##
 ---
